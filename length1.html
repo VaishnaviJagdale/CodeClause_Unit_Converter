@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lenght Converter</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Arial, Helvetica, sans-serif";
+        text-transform: uppercase;
+      }
+      label {
+        text-transform: capitalize;
+        font-weight: 600;
+      }
+      h1#heading {
+        text-align: center;
+        margin-top: 50px;
+        color: white;
+      }
+      body {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+      }
+      .container {
+        width: 650px;
+        height: 300px;
+        background-color: rgb(144, 223, 237);
+        border-radius: 30px;
+      }
+      #cont {
+        margin: 15px auto 0px auto;
+        width: 80%;
+        text-align: center;
+        background-color: rgb(224, 125, 107);
+        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
+        padding: 20px;
+        border-radius: 20px;
+      }
+
+      .cont1 {
+        display: inline-block;
+      }
+      .cont2 {
+        padding: 5px 10px;
+        margin: 10px;
+        font-size: 30px;
+        font-weight: 600;
+        width: 200px;
+        text-align: center;
+        border-radius: 10px;
+      }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 id="heading">Length Converter</h1>
+        <div id="cont">
+            <div class="cont1">
+                <label for="">meter</label><br>
+                <input type="Number" value="1" id="meter" class="cont2">
+            </div>
+
+            <div class="cont1">
+                <h1>=</h1>
+            </div>
+            <div class="cont1">
+                <label for="">cm</label><br>
+                <input type="Number" value="100" id="cm" class="cont2">
+            </div>
+
+        </div>
+    </div>
+    
+    <!-- <script src="script.js"></script> -->
+    <script>
+    var meter = document.getElementById("meter");
+      var cm = document.getElementById("cm");
+      meter.addEventListener("input", function () {
+        let f = this.value;
+        let i = f * 100;
+        cm.value = i;
+      });
+
+      cm.addEventListener("input", function () {
+        let i = this.value;
+        let f = i / 100;
+        if (!Number.isInteger(f)) {
+          f = f.toFixed(2);
+        }
+        meter.value = f;
+      });
+    </script>
+</body>
+</html>
